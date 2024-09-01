@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="description" content="Cofetaria Dulcelind ofera prajituri, torturi, produse de patiserie cu optiunea de achizitie online si livrare prin curier.">
+        <meta name="keywords" content="cofetarie, Dulcelind, prajituri, torturi, dulce, pateuri, produse">
+        
+        <title>Cofetăria Dulcelind - home</title>
+        <%- include("../fragmente/head") %>     
+        <link href="/resurse/css/produs.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+    
+
+    <main>
+        <section>
+            <h2>Pagină produs</h2>
+                <article id="art-produs">
+                    <h3><span class="nume"><%- locals.prod.nume %></span></h3>
+                    <p>Pret: <span class="pret"><%- locals.prod.pret %> </span></p>
+                    <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
+                    <p>Autor(i): <span class="autori"><%- locals.prod.autori %> </span></p>
+                    <p>Editura: <span class="categorie"><%- locals.prod.editura %> </span></p>
+                    <p>Nr. pagini: <span class="nr-pagini"><%- locals.prod.numar_pagini %> </span></p>
+                    <p>An apariție: <span class="an-aparitie"><%- locals.prod.an_aparitie %> </span></p>
+                    <p>Gen: <span class="categorie"><%- locals.prod.gen %> </span></p>
+                    <p>Format digital: 
+                        <span class="categorie">
+                            <% let digital = ""; if(!locals.prod.format_digital) {digital = "nu"} else {digital = "da"} %>
+                            <%- digital %> 
+                        </span></p>
+                    <p>Data adăugare: <span class="categorie"><%- locals.prod.data_intrare %> </span></p>
+                    <figure class="imag-produs">
+                        <img  src="/resurse/imagini/foto_produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
+                    </figure>    
+                </article>
+            
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>

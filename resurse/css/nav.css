@@ -1,0 +1,88 @@
+nav{
+    --inaltime-meniu: 2rem;
+    --latime-buton: 100px;
+    --culoare-text-meniu: white;
+    --culoare-text-meniu-selectat:red;
+
+    height: var(--inaltime-meniu);
+    background-color: var(--culoare-deschisa);  
+}
+
+
+#hamburger, #ch-menu, #acasa-mediu{
+    display: none;
+}
+
+.meniu, .meniu * {
+    padding: 0;
+    margin: 0;
+}
+
+.meniu{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.meniu li{
+    /*border: 1px solid var(--culoare-inchisa);*/
+	border-right: 2px solid var(--culoare-inchisa);
+	border-bottom: 2px solid var(--culoare-inchisa);
+	background-color: var(--culoare-deschisa);
+    font-weight: bold;
+    height: var(--inaltime-meniu);
+    width: var(--latime-buton);
+    text-align: center;
+    box-sizing: border-box;
+    transition: all 1s linear;
+}
+
+.meniu li:hover{
+    background-color: var(--culoare-inchisa);
+}
+
+.meniu li:hover > a, .meniu li:hover > div{
+    color: var(--culoare-text-meniu-selectat);
+}
+
+.meniu a, .meniu div{
+    text-decoration: none;
+    color: var(--culoare-text-meniu);
+    display: block;
+    height:100%;
+    line-height: var(--inaltime-meniu);
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all 1s linear;
+}
+
+/* submeniu */
+.meniu ul{
+    display: none;
+    list-style-type: none;
+    position: relative;
+    background-color: var(--culoare-deschisa);
+    z-index: 10;
+}
+
+.meniu > li:hover > ul{
+    display: block;
+    transform: scaleX(0) scaleY(0);
+    opacity: 0;
+    animation-name: animatie_submeniu;
+    animation-duration: 1s;
+    /*animation-iteration-count: 1;*/
+    animation-fill-mode: forwards;
+    /*animation-play-state: running;*/
+    /*animation-timing-function: linear;*/
+    transform-origin: top left;
+    
+    
+}
+
+@keyframes animatie_submeniu {
+    100%{
+        transform: scaleX(1) scaleY(1);
+        opacity: 1;
+    }
+}

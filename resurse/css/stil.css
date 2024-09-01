@@ -1,0 +1,88 @@
+html{
+    font-size: 17px;
+    transition: all .5s linear;
+}
+
+
+p {
+    background-color: var(--culoare1);
+	padding:.5em;
+	border-top-right-radius:1em;
+}
+
+
+li{
+    color: var(--culoare1);
+}
+
+h1, h2 {
+    /*border: 2px solid var(--culoare1);*/
+	text-align: center;
+	color: white;
+	padding: .3em;
+
+}
+
+/* ordinea pentru media queries conteaza! in codul de mai jos, stilul pentru ecran cu vw <= 800px nu se va aplica NICIODATA! Ultima interogare este sastisfacuta
+daca este satisfacuta conditia de ecran mic (x <= 800px => x < 1200px) si, fiind ultima, conform principiului CSS, se va aplica!
+Solutia corecte este sa punem media queries in ordinea DESCRESCATOARE a conditiilor pentru viewport. De ex: <= 1400, <=1200, <=800 etc
+
+@media screen and (max-width:800px) {
+    body{
+        --dim-spatiere: 50px;
+        --culoare1:red;
+    }
+    
+}
+
+@media screen and (max-width:1200px) {
+    body{
+        --dim-spatiere: 100px;
+        --culoare1:green;
+    }
+    
+}
+
+*/
+
+.container-iframe{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.container-iframe * {
+    border: 1px solid var(--culoare5);
+}
+
+.taburi-iframe{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+	border: none;
+    
+}
+
+.taburi-iframe > a{
+    display: block;
+    border: 1px solid green;
+    width: 10em;
+	padding:.3em;
+    /*height: 30px;*/
+    text-align: center;
+	text-decoration: none;
+	font-weight: 700;
+	color: whitesmoke;
+    /*line-height: 30px;*/
+    border-radius: 1em;
+	margin-top: .5em;
+    margin-right: .7em;
+    box-shadow: 0 0 .3em .3em var(--culoare5) inset;
+}
+
+.taburi-iframe > a:last-child{
+    margin-right: 0px;
+}
+
+.container-iframe iframe, .taburi-iframe{
+    width: 100%;
+}

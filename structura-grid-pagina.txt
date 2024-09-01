@@ -1,0 +1,11 @@
+elememte #grid-pagina:
+
+welcome
+promotii
+produse
+orar
+desc-gen1/fig1
+desc-gen2/fig2
+desc-gen3/fig3
+anunturi
+index-intrebari

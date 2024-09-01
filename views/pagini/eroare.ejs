@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+	
+		<meta name="keywords" content="anticariat, Anticariatul Libri Mundi, Libri Mundi, cărți vechi, cărți, carte, roman, literatură, știință, manuale, manuale școlare, carte didactică, literatură universală, timp liber, literatură polițistă, literatură SF, SF, science fiction, roman polițist, cărți la reduceri, București, Bucuresti">
+        <meta name="description" content="Anticariatul Libri Mundi vă oferă cărți vechi și cărți contemporane din categoriile literatură, știință, manuale școlare, carte didactică, timp liber, rarități">
+		
+      
+        <title>Anticariatul Libris Mundi - eroare</title>
+        <link rel="stylesheet" type="text/css" href="/resurse/css/eroare.css"
+        <%- include("../fragmente/head.ejs");  %> 
+
+
+    </head>
+    <body>
+        
+    <%- include("../fragmente/header.ejs");  %> 
+
+    <main>
+        <div id="err-coloane">
+			<div id="err-imag">
+				<img src="<%- locals.imagine %>" />
+			</div>
+			<section>
+				<h2><%- locals.titlu %></h2>
+				<p><%- locals.text %></p>
+			</section>
+		</div>
+    </main>
+    
+    <%- include("../fragmente/footer.ejs");  %> 
+
+
+    </body>
+</html>

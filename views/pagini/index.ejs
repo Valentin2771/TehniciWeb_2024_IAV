@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <title>Anticariatul Libri Mundi</title>
+     
+        <%- include("../fragmente/head.ejs"); %>
+
+        <!-- resurse specifice paginii principale -->
+        <link rel="stylesheet" href="/resurse/css/layout.css" type="text/css"/>
+        <link rel="stylesheet" href="/resurse/css/galerie-statica.css" type="text/css" />
+
+    </head>
+    <body>
+        <%- include("../fragmente/header.ejs"); %>
+        <main>
+            <div id="grid-pagina">
+                <section id="welcome">
+                    <h2>Bine ați venit</h2>
+                    <p>Acesta este site-ul <b>Anticariatului Libri Mundi</b>. Ne bucurăm să vă întâmăpinăm cu o ofertă bogată și diversă de cărți vechi și noi din categroriile <b>didactică</b>, <b>literatură universală</b>, <b>carte polițistă</b>, <b>Science Fiction</b>, <b>timp liber</b> și multe altele, la <b>reduceri</b> sau la prețuri promoționale. Un vechi înțelept spunea că <strong>o zi în care n-am citit o pagină dintr-o carte este o zi pierdută</strong>. Un citat atribuit lui Mihai Eminescu spune, la rândul său, ceva asemnănător: <q>Din școală și din cârciumă nu iese nimeni cum intră</q>.<s> Nu avem niciun motiv să ne îndoim de adevărul acestei zicale</s> <ins>Pentru a sublinia adevărul acestei zicale</ins>, <s>așa că</s> vă dăm posibilitatea de a accesa rafturile noastre virtuale în căutarea lecturilor care vă vor îmbogăți viața. Veți găsi aici lucrări care explică noțiuni precum <i>Machine Learning</i>, <i>Zu haus</i>, <i>poartă-n casă</i>, <i>modus operandi</i> sau <i>Ancient astronaut theory</i>. <em>Lista este, desigur, mult mai vastă</em>. Spor la citit!</p>
+
+                    <figure class="fg-img">
+                        <picture>
+                            <!-- ordinea conteaza; va fi luata prima imagine care respecta conditia din atributul media; conditia se refera la device viewport-->
+                            <source srcset="/resurse/imagini/mic.jpg" media="(max-width:600px)"/>
+                            <source srcset="/resurse/imagini/mediu.jpg" media="(max-width:900px)" />
+                            <img src="/resurse/imagini/carte_ochelari_telefon.jpg" alt="carte ochelari telefon" title="o carte, o pereche de ochelari, un telefon">
+                        </picture>
+                        <figcaption>Text descriptiv pentru o imagine</figcaption>
+                    </figure>
+
+                    <p><span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde dolorem suscipit sunt corporis pariatur, explicabo vero animi similique rem impedit iusto dolorum facilis laborum fuga. Quisquam dolorum nobis odit veritatis.</span><span>Vel, veritatis quae explicabo totam expedita vitae quas accusamus, impedit eius amet iste vero! Nostrum officia neque quibusdam! Aperiam dolore quam necessitatibus vitae est veniam nisi illo neque delectus quaerat!</span><span>Veniam sunt, doloribus quidem sapiente soluta id? Quae veniam maiores dolorum nisi, a odit perferendis sapiente ullam, inventore quisquam itaque neque! Explicabo, nihil iure. Ipsam asperiores magni culpa dolor ex.</span><span>Facere perferendis tempore, error similique omnis blanditiis soluta laudantium eligendi doloribus iusto vel incidunt distinctio, quam odit, dolore cupiditate facilis maiores. Quaerat mollitia soluta autem quod dolores minus vitae expedita?</span><span>Error quam voluptatum minima obcaecati nemo distinctio quaerat nobis recusandae debitis excepturi labore laboriosam, reprehenderit, nesciunt officia doloribus. Quibusdam fuga eligendi consectetur sit inventore, nemo amet magni repellat tenetur molestiae!</span><span>Cumque debitis, minima quam non distinctio enim, molestias ipsa reprehenderit, modi velit est consequuntur? Distinctio nulla sint ratione, culpa eveniet hic exercitationem eos molestiae! Voluptate est ab laboriosam eum perferendis!</span><span>Doloremque et vel architecto commodi quae eaque error, dolore nulla nemo expedita dolorem. Vero ducimus quidem esse reiciendis sunt dolor voluptate, ut error laudantium. Voluptates accusantium soluta esse eius vitae!</span><span>Repellendus veritatis molestias corrupti ipsa rem impedit voluptatem, error nemo, laborum repellat ratione. Error in quod modi velit, deserunt at quasi necessitatibus illum cumque corporis, perferendis et, repellat dolores odio?</span><span>Sed, quia id possimus inventore dicta rerum quaerat velit hic voluptates exercitationem cumque rem corporis, accusamus quis est earum. Natus quos eaque accusantium maxime quaerat, iure commodi architecto. Optio, ipsam!</span><span>Dolore facilis, sunt enim dicta voluptatem hic asperiores dolorum optio nisi doloribus aspernatur quibusdam dolorem necessitatibus ipsam eligendi dolores soluta! Culpa mollitia consectetur sed, neque eligendi fugit odit molestiae natus?</span></p>
+
+                </section>
+                
+                <section id="promotii">
+                    <h2>Promotii</h2>
+                    <p><span>Aici am putea să ne imaginăm că se află o descriere a promoțiilor noastre, de genul &quot;la cinci cărți achiziționate, primiți una gratis, aleasă de dumneavoastră dintr-un set de opțiuni compus de noi&quot;. Însă orice efort de imaginație, inclusiv unul dedicat ofertelor, necesită timp, iar timpul este o resursă neprețuită. Prin urmare, imaginați-vă ce doriți, dar nu ne implicați pe noi și timpul nostru în acest exercițiu intelectual &#128516;</span></p>
+                    
+                    <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda veniam cum aliquam, deleniti doloribus earum aspernatur voluptas dolores, expedita voluptatibus corrupti nesciunt voluptatem vitae reprehenderit fugit mollitia, commodi dolor iusto!</span><span>Quia repellat tempore architecto aperiam similique vitae debitis voluptatibus nulla nisi perferendis. Quibusdam error natus sit architecto neque adipisci consectetur rem voluptates doloremque maiores, corporis similique ab blanditiis vel labore.</span><span>Numquam, itaque ut aspernatur quas veritatis facilis odio! Doloremque libero alias repudiandae molestias porro ducimus in, nisi modi exercitationem? Laboriosam delectus dignissimos cum earum vel quis sapiente sunt quaerat et.</span><span>Esse nisi sunt dolores omnis nulla alias nam vel? Eaque fuga veniam nostrum iusto quisquam ipsum sit pariatur eos! Maxime facere deleniti alias obcaecati inventore hic, odit aspernatur excepturi voluptatem!</span><span>Unde veritatis expedita laudantium? Sint distinctio mollitia vero earum odit numquam, id magni reiciendis iusto corporis minima quibusdam nam, molestiae, perferendis laborum quo quis facere. Quam perferendis quo ab aliquid.</span></p>
+                </section>
+                
+                <section id="produse">
+                    <h2>Oferta noastră</h2>
+                    <p><span>Este una bogată, credeți-ne pe cuvânt. Ce nu avem în baza de date și în depozit aducem în timp record, pe bază de comandă fermă....</span></p>
+                    <p><span> Loremipsum dolor sit amet consectetur adipisicing elit. Minima quae dolorem libero perferendis. Exercitationem ratione hic atque dolorem non doloremque sequi aliquid sunt voluptates cum ipsam, repellat libero culpa enim.</span><span>Perspiciatis accusantium architecto aliquam doloremque quisquam, saepe maxime iure labore alias culpa commodi necessitatibus tempora nulla delectus earum pariatur voluptatum! Adipisci porro, aperiam delectus expedita quisquam error asperiores praesentium quos.</span><span>Ipsa et fugit, libero error minima velit! Ipsam voluptas aliquid aperiam perferendis ad. Omnis mollitia, impedit aliquam quisquam quia nihil facere eligendi autem ducimus quidem exercitationem commodi cupiditate quaerat aspernatur!</span><span>Similique obcaecati, cum sunt vitae iure nobis quibusdam amet rem magni minima repellat. Est eligendi perspiciatis quae fuga beatae corporis incidunt quaerat deserunt, assumenda, ipsum similique soluta, praesentium quo adipisci.</span><span>Eos maxime, ipsa laudantium eaque in qui quisquam cum neque architecto temporibus aspernatur. Sint, ullam quia tempora perferendis suscipit provident libero eum, quidem facere, minus quam. Recusandae eum at ullam!</span></p>
+                </section>
+
+                <section id="orar">
+
+                    <h2>Orar</h2>
+                    <table id="tab-orar">
+                        <thead>
+
+                            <tr>
+                                <th>Cod</th>
+                                <th>Perioadă</th>
+                                <th>Zi</th>
+                                <th>Dimineață</th>
+                                <th>Siesta</th>
+                                <th>După-amiază</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td rowspan="5">Zile<br/>Lucrătoare</td>
+                                <td>Luni</td>
+                                <td>08-12</td>
+                                <td>12-14</td>
+                                <td>14-20</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                
+                                <td>Marți</td>
+                                <td>08-12</td>
+                                <td>12-14</td>
+                                <td>14-20</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                
+                                <td>Miercuri</td>
+                                <td>09-12</td>
+                                <td>12-14</td>
+                                <td>14-21</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                
+                                <td>Joi</td>
+                                <td>09-12</td>
+                                <td>12-14</td>
+                                <td>14-21</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                
+                                <td>Vineri</td>
+                                <td>09-12</td>
+                                <td>12-14</td>
+                                <td>14-21</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td rowspan="2">Weekend</td>
+                                <td>Sambata</td>
+                                <td>10-12</td>
+                                <td>12-13</td>
+                                <td>13-16</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Duminica</td>
+                                <td>10-16</td>
+                                <td>-</td>
+                                <td>Închis</td>
+                            </tr>
+                        </tbody>
+                        <tfoot><tr><td colspan="6">Închis cu ocazia sărbătorilor legale</td></tr></tfoot>
+                    </table> 
+
+                </section>
+
+                <figure id="fig1" class="fg-img">
+                    <img src="/resurse/imagini/pixabay_exoplanet_ai-generated.jpg" alt="Exoplanetă. Imagine generată cu I.A.">
+                    <figcaption>Exoplanetă. Imagine generată cu ajutorul Inteligenței Artificiale</figcaption>
+                </figure>
+
+                <figure id="fig2" class="fg-img">
+                <img src="/resurse/imagini/pixabay_compozitie_lectura_nocturna.jpg" alt="Cititor pe mare">
+                <figcaption>Compoziție vizuală cu grad ridicat de improbabilitate, reprezentând un cititor ce levitează deasupra apei, cu clădirile unui oraș pe fundal</figcaption>
+                </figure>
+
+                <figure id="fig3" class="fg-img">
+                <img src="/resurse/imagini/pixabay_literatura_clasica.jpg" alt="Cititor cu o carte veche în mână">
+                <figcaption>Literatură clasică</figcaption>
+                </figure>
+
+                <section id="anunturi">
+                    <h2>Anunțuri</h2>
+                
+                    <p><time datetime="2024-06-05">5 iunie 2024</time> Sesiunea de vară se apropie, fără să aducă mari speranțe în ceea ce privește promovarea examenelor.</p>
+                    <p><time datetime="2024-06-10">10 iunie 2024</time> Multă baftă curajoșilor care susțin examene în prezențial!</p>
+                    <p><time datetime="2024-06-20">20 iunie 2024</time> Conform ultimei numărători, studentul beneficiază într-un an de cinci sesiuni, dacă luăm în calcul și reexaminările din toamnă. Așa că nu mai faceți atâta caz dacă ați picat sau dacă nu ați promovat (de ex., prin neprezentare) un examen. Mai e o șansă la toamnă!</p>
+                    <p><time datetime="2024-07-15">15 iulie 2024</time> S-a terminat sesiunea de vară, inclusiv cea de restanțe. Acum, studenții pot citi toate cărțile pe care ar fi vrut să le citească în sesiune, dar n-au putut pentru că au fost nevoiți să învețe pentru examene.</p>
+                    <p><time datetime="2024-08-01">1 august 2024</time> August 2024 va fi cea mai caldă lună înregistrată vreodată pe Pământ. De unde știm asta, dacă luna abia a început? Simplu: am făcut un mic salt temporal în viitorul apropiat și v-am adus această știre, previzibilă, de altfel. Sperăm că demersul nostru nu va distruge, prin așa-numitul efect al bătăii de aripă a fluturelui, viitorul umanității, în particular, și al universului, în general.</p>
+                    <p><time datetime="2024-08-11">11 august 2024</time> Studii recente și necontestate de nimeni arată că ființele umane care nu își iau concediu pe parcursul unui an sunt predispuse la o viziune cinică și pesimistă asupra vieții.</p>
+
+                    <p><time datetime="2024-08-26">26 august 2024</time> <strong> Se apropie sesiunea de reexaminări Pulsul se accelerează, stresul crește, nervozitatea explodează!</strong></p>
+                </section>
+
+                <section id="index-intrebari">
+                    <h2>Întrebări frecvente</h2>
+                    <details>
+                        <summary>Este adevărat că cititul dezvoltă capacitățile intelectuale?</summary>
+                        <p>Da!</p>
+                    </details>
+
+                    <details>
+                        <summary>Este adevărat că cititul poate afecta abilitățile sociale ale cititorului?</summary>
+                        <p>Depinde. Dacă cititul devine acaparator, adică afectează timpul alocat altor activități importante, se poate ajunge și la așa ceva. Dacă lectura îl determină pe cititor să îmbrățișeze o concepție pesimistă față de umanitate, se poate ajunge și la așa ceva. Dar nu este o regulă absolută.</p>
+                    </details>
+
+                    <details>
+                        <summary>Este adevărat că cei care citesc mult sunt nefericiți?</summary>
+                        <p>Depinde. Dacă lectura îi determină pe cititori să își piardă speranța în legătură cu viitorul speciei umane, cititorii s-ar putea să fie nefericiți. Dar nu e obligatoriu.</p>
+                    </details>
+
+                    <details>
+                        <summary>Este adevărat că vremurile moderne descurajează lectura cărților?</summary>
+                        <p>Absolut! Este la fel de adevărat ca și adevărul axiomatic conform căruia consumerismul se bazează pe continua degradare a intelectului.</p>
+                    </details>
+
+                </section>
+        </div>
+
+        <section id="galerie-statica">
+            <h2>Galerie</h2>
+            <div id="grid-galerie">
+                <%
+                    var vLuni = ["ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie"];
+                    var d = new Date();
+                    var lunaCurenta = vLuni[d.getMonth()];
+                    
+                    for(let imag of locals.imagini){
+                        if(imag?.luni?.includes(lunaCurenta)) {
+                            %>
+                           <figure>
+                                <picture>
+                                    <source srcset="<%= imag.fisier_mediu %>" media="(max-width:600px)" />
+                                    <img src="<%= imag.fisier %>" alt="Cărți" />
+                                </picture>
+                                <figcaption><%= imag.descriere %></figcaption>
+                            </figure>
+                    <% } %>
+                <% } %>
+            </div>
+        </section>
+
+        <section id="recomandari">
+            <h2>Recomandări</h2>
+            <p>În continuare, vă invităm să explorați câteva opere din genurile clasic, polițist și fantasy, așa cum au fost ele concepute în varianta audiobook.
+                Drepturile de autor aparțin companiilor care au postat în spațiul public aceste fișiere pe platforma YouTube.
+            </p>
+            <div class="container-iframe">
+                <div class="taburi-iframe">
+                    <a href="https://www.youtube.com/embed/2LfmSIj3WsQ" target="ifr-video">The poor traveller by Charles Dickens</a>
+                    <a href="https://www.youtube.com/embed/ztBqwQ4O8rw" target="ifr-video">The clocks by Agatha Christie</a>
+                    <a href="https://www.youtube.com/embed/FahPues3s5Q" target="ifr-video">Strawberry Spring by Stephen King</a>
+                </div>
+    
+                <iframe name="ifr-video" width="560" height="315" src="https://www.youtube.com/embed/s1eUO6u3RN4?si=LqDypSFYqgBRhOu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
+            </div>
+            
+            
+
+        </section>
+        </main>
+        
+        <%- include("../fragmente/footer.ejs"); %>
+
+    </body>
+
+</html>
