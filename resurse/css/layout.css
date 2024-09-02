@@ -1,17 +1,17 @@
 #grid-pagina{
     display: grid;
     grid-gap: 10px;
-    grid-template-areas: "welcome welcome welcome"
-                        "promotii promotii orar"
-                        "fig1 produse produse"
-                        "fig2 produse produse"
-                        "fig3 produse produse"
-                        "anunturi anunturi index-intrebari";
+    grid-template-areas: "welcome welcome welcome welcome"
+                        "welcome welcome welcome welcome"
+                        "promotii orar orar anunturi"
+                        "produse produse produse produse"
+                        "produse produse produse produse"
+                        "index-intrebari index-intrebari fig1 fig2";
 }
 
 #grid-pagina > * {
-    border: 2px var(--culoare1) solid;
-    padding: 15px;
+    border: .2rem var(--culoare1) solid;
+    padding: .8rem;
 }
 
 #welcome{
@@ -38,9 +38,9 @@
     grid-area: fig2;
 }
 
-#fig3{
+/* #fig3{
     grid-area: fig3;
-}
+} */
 
 #anunturi{
     grid-area: anunturi;
@@ -50,7 +50,7 @@
     grid-area: index-intrebari;
 }
 
-#fig1, #fig2, #fig3{
+#fig1, #fig2{
     margin:0;
 }
 
@@ -59,16 +59,15 @@
         font-size: 14px;
     }
     body{
-        --dim-spatiere: 100px;
+        --dim-spatiere: 5.5rem;
         /*--culoare1:green;*/
 
         #grid-pagina{
        
             grid-template-areas: "welcome welcome"
-                                "promotii promotii"
+                                "produse produse"
                                 "fig1 orar"
-                                "fig2 produse"
-                                "fig3 produse"
+                                "fig2 promotii"
                                 "anunturi index-intrebari";
         }
     }
@@ -80,7 +79,7 @@
         font-size: 11px;
     }
     body{
-        --dim-spatiere: 50px;
+        --dim-spatiere: 3rem;
         /*--culoare1:red;*/
         #grid-pagina{
             display:block;
