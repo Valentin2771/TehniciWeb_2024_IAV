@@ -36,28 +36,54 @@ footer a{
 
 #orar{
 	position: relative;
-	overflow: scroll;
+	overflow-x: scroll;
 	background: var(--culoare1);
 }
 
 #tab-orar th, #tab-orar td{
-    border: 1px solid whitesmoke;
+    /* border: 1px solid whitesmoke; */
     padding: 10px;
     transition: all 1s linear;
+    border-left: 1px solid var(--culoare-inchisa);
+    border-right: 1px solid var(--culoare-inchisa);
 }
 
+#tab-orar thead th {
+    border-top: .3rem solid var(--culoare6);
+}
+
+#tab-orar tfoot td{
+    border-bottom: .3rem solid var(--culoare6);
+}
+
+table tbody tr:nth-of-type(odd) td{
+    border-top: .3rem solid var(--culoare5);
+    border-bottom: .3rem solid var(--culoare-inchisa);
+}
+
+table tbody tr:nth-of-type(even) td{
+    border-top: .3rem solid var(--culoare-inchisa);
+    border-bottom: .3rem solid var(--culoare5);
+}
+
+
 #tab-orar{
-    border-spacing: 0;
+    border: 10px var(--culoare6) inset;
     border-collapse: collapse;
+    caption-side: bottom;
 }
 
 #tab-orar > thead th:nth-of-type(2n + 1){
     background-color: darkgray;
 }
 
-#tab-orar td[rowspan]:hover, #tab-orar td[colspan]:hover{
+#tab-orar td[colspan]:hover{
     background-color: bisque;
 	color: darkblue;
+}
+
+#tab-orar tr:hover > td{
+    outline: 5px solid rgba(156, 25, 25, 0.7);
 }
 
 #link-top{
