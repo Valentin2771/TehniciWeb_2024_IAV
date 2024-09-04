@@ -13,6 +13,12 @@ console.log("Folder proiect", __dirname);
 console.log("Cale fisier", __filename);
 console.log("Director de lucru", process.cwd());
 
+app.set("view engine","ejs");
+ 
+app.use("/resurse", express.static(__dirname+"/resurse"));
+app.use("/node_modules", express.static(__dirname+"/node_modules"));
+
+
 var client = new Client({
     database: "tehniciweb1",
     user: "valentin",
@@ -28,15 +34,10 @@ client.query("select * from produse", function(err, rez){
         console.log(err);
     } else {
         obGlobal.optiuniMeniu = rez.rows;
-        console.log(rez.rows);
+        // console.log(rez.rows);
     }
 });
  
-app.set("view engine","ejs");
- 
-app.use("/resurse", express.static(__dirname+"/resurse"));
-app.use("/node_modules", express.static(__dirname+"/node_modules"));
-
 
 obGlobal = {
     obErori: null,
@@ -56,15 +57,14 @@ for(let folder of vect_foldere){
     }
 }
 
+// -- vector cereri
+
 app.get(["/", "/index", "/home"], function(req, res){
     //res.sendFile(path.join(__dirname, "../_ProiectTW_septembrie_2024/index.html"));
     //res.sendFile(__dirname+"/index.html");
     res.render("pagini/index", {ip: req.ip, imagini: obGlobal.obImagini.imagini});
 });
 
-app.get("/pagina2", function(req, res){
-    res.render("pagini/pagina2");
-})
 
 app.get("/produse", function(req, res){
     client.query("select * from unnest(enum_range(null::categorie_principala))", function(err, rezCategorie){
@@ -73,7 +73,7 @@ app.get("/produse", function(req, res){
         } else {
             let conditieWhere = "";
             if(req.query.tip)
-                conditieWhere = ` where tip_produs = '${req.query.tip}'`;
+                conditieWhere = ` where gen = '${req.query.tip}'`;
 
             client.query("select * from produse " + conditieWhere, function(err, rez){
                 console.log(300);
@@ -114,9 +114,74 @@ app.get("/produs/:id", function(req, res){
 //     res.render("pagini/eroare");
 // });
 
+// cerinta pagina despre
+
+app.get("/despre", function(req, res){
+    res.render("pagini/despre");
+});
+
+// cerinta favicon
+
+app.get("/favicon.ico", function(req, res){
+    res.sendFile(path.join(__dirname, "/resurse/imagini/ico/favicon.ico"));
+});
+
+// cerinta 17
+
+let expr = /^\/resurse\/[a-zA-Z0-9_\/-]+$/;
+
+app.get(expr, function(req, res){
+    afisareEroare(res, 403);
+});
+
+// cerinta 18
+
+app.get("/*.ejs", function(req, res){
+    afisareEroare(res, 400);
+})
+
+// interceptare cereri catre resurse care nu pot fi gasite
+app.get("/*", function(req, res){
+
+    try{
+        res.render("pagini" + req.url, function(err, rezHtml){
+            if(err){
+                if(err.message.startsWith("Failed to lookup view")){
+                    afisareEroare(res, 404);
+                    console.log("Nu a gasit pagina ", req.url);
+                } else {
+                    res.send(Html);
+                }
+            }
+        });
+    } catch(err1){
+        if(err1.message.startsWith("Cannot find module")){
+            afisareEroare(res, 404);
+            console.log("Nu a gasit resursa ", req.url);
+            return;
+        }
+        afisareEroare(res);
+    }
+    
+});
+
+// completare cale imagini erori
+
+function initErori(){
+    let continut = fs.readFileSync(path.join(__dirname, "resurse/json/erori.json")).toString("utf-8");
+
+    obGlobal.obErori = JSON.parse(continut);
+
+    console.log(obGlobal.obErori);
+    // setare cale imagini eroare
+    for (let eroare of obGlobal.obErori.info_erori){
+        eroare.imagine = path.join("/", obGlobal.obErori.cale_baza, eroare.imagine);
+    }
+    obGlobal.obErori.eroare_default.imagine = path.join("/", obGlobal.obErori.cale_baza, obGlobal.obErori.eroare_default.imagine);  
+}
+initErori();
 
 // galerie imagini
-
 
 function initImagini(){
     let continut= fs.readFileSync(path.join(__dirname,"resurse/json/galerie.json")).toString("utf-8");
@@ -191,12 +256,11 @@ fs.watch(obGlobal.folderScss, function(eveniment, numeFis){
     }
 });
 
-initErori();
 
 function afisareEroare(res, _identificator, _titlu, _text, _imagine){
     let eroare = obGlobal.obErori.info_erori.find(function(elem){
-        return elem.identificator == _identificator;
-    });
+        return elem.identificator == _identificator; // find: primul elem din vector care satisface conditia opreste cautarea!
+    }); // la final, eroare va avea valoarea undefined sau va fi setat la primul obiect gasit care satisface conditia
 
     if(!eroare)
         eroare = obGlobal.obErori.eroare_default;
@@ -205,88 +269,10 @@ function afisareEroare(res, _identificator, _titlu, _text, _imagine){
             titlu: _titlu || eroare.titlu,
             text: _text || eroare.text,
             imagine: _imagine || eroare.imagine
-
-        }
+ 
+        } // obiectul "locals"
     );
 }
-
-app.get("/*", function(req, res){
-
-    try{
-        res.render("pagini" + req.url, function(err, rezHtml){
-            if(err){
-                if(err.message.startsWith("Failed to lookup view")){
-                    afisareEroare(res, 404);
-                    console.log("Nu a gasit pagina ", req.url);
-                } else {
-                    res.send(Html);
-                }
-            }
-        });
-    } catch(err1){
-        if(err1.message.startsWith("Cannot find module")){
-            afisareEroare(res, 404);
-            console.log("Nu a gasit resursa ", req.url);
-            return;
-        }
-        afisareEroare(res);
-    }
-
-    
-});
-
-
-// completare cale imagini
-
-app.get("/favicon.ico", function(req, res){
-    res.sendFile(path.join(__dirname, "/resurse/imagini/ico/favicon.ico"));
-});
-
-// cerinta 17
-
-let expr = /^\/resurse\/[a-zA-Z0-9_\/-]+$/;
-
-app.get(expr, function(req, res){
-    afisareEroare(res, 403);
-});
-
-app.get("/*.ejs", function(req, res){
-    afisareEroare(res, 400);
-})
-
-app.get("/*", function(req, res){
-
-    try{
-        res.render("pagini" + req.url, function(err, rezHtml){
-            if(err){
-                if(err.message.startsWith("Failed to lookup view")){
-                    afisareEroare(res, 404);
-                    console.log("Nu a gasit pagina ", req.url);
-                } else {
-                    res.send(Html);
-                }
-            }
-        });
-    } catch(err1){
-        if(err1.message.startsWith("Cannot find module")){
-            afisareEroare(res, 404);
-            console.log("Nu a gasit resursa ", req.url);
-            return;
-        }
-        afisareEroare(res);
-    }
-
-});
-
-function initErori(){
-    let continut = fs.readFileSync(path.join(__dirname, "resurse/json/erori.json")).toString("utf-8");
-    obGlobal.obErori = JSON.parse(continut);
-    for (let eroare of obGlobal.obErori.info_erori){
-        eroare.imagine = path.join(obGlobal.obErori.cale_baza, eroare.imagine);
-    }
-    obGlobal.obErori.eroare_default.imagine = path.join(obGlobal.obErori.cale_baza, obGlobal.obErori.eroare_default.imagine);  
-}
-
 
 
 app.listen(8080);

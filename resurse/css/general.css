@@ -43,7 +43,7 @@ footer a{
 #tab-orar th, #tab-orar td{
     /* border: 1px solid whitesmoke; */
     padding: 10px;
-    transition: all 1s linear;
+    transition: all .5s linear;
     border-left: 1px solid var(--culoare-inchisa);
     border-right: 1px solid var(--culoare-inchisa);
 }

@@ -75,7 +75,7 @@ nav{
     animation-fill-mode: forwards;
     /*animation-play-state: running;*/
     /*animation-timing-function: linear;*/
-    transform-origin: top left;
+    transform-origin: top center;
     
     
 }

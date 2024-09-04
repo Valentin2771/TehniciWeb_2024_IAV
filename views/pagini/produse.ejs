@@ -55,7 +55,7 @@
             <div class="grid-produse">
                 <% for( let prod of locals.produse) { %>
                     <article class="produs" >
-                        <h3 class="nume">Nume: <a href="/produs/<%-prod.id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
+                        <h3 class="nume">Nume: <a href="/produs/<%- prod.id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
                         <div class="info-prod">
                             <p class="pret">Pret: <span class="val-pret"><%- prod.pret%></span></p>
                             <p class="pagini">Pagini: <span class="val-pagini"><%- prod.numar_pagini%></span></p>

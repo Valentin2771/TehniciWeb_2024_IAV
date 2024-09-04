@@ -48,12 +48,12 @@ INSERT into produse (nume, descriere, imagine, gen, stare, pret, numar_pagini, c
 
 ('Crime de mântuială', 'Colecție de povestiri polițiste a romancierului american Raymond Chandler.', 'pixabay_carte_010.jpg', 'polițistă', 'nouă', 28.80, 349, 'paperback', 'Nemira', '{"Raymond Chandler"}', FALSE, '968-606-579-909-7', 2014, current_timestamp),
 
-('Vremea mânzului sec', 'Romanul de debut al scriitorului român contemporan Cristian Tudor Popescu.', 'pixabay_carte_011.jpg', 'universală', 'bună', 10, 177, 'paperback', 'Polirom', '{"Cristian Tudor Popescu"}', FALSE, '973-683-129-9', 1998, current_timestamp),
+('Vremea mânzului sec', 'Romanul de debut al scriitorului român contemporan Cristian Tudor Popescu.', 'pixabay_carte_011.jpg', 'literatură universală', 'bună', 10, 177, 'paperback', 'Polirom', '{"Cristian Tudor Popescu"}', FALSE, '973-683-129-9', 1998, current_timestamp),
 
-('Un titlu stupid, în lipsa inspirației', 'Carte fictivă. Nu a fost încă scrisă și nu există garanții că va vedea vreodată lumina tiparului.', 'pixabay_carte_012.jpg', 'universală', 'nouă', 123, 249, 'hardcover', 'Editura obscură', '{"John Doe"}', TRUE, NULL, 2003, current_timestamp),
+('Un titlu stupid, în lipsa inspirației', 'Carte fictivă. Nu a fost încă scrisă și nu există garanții că va vedea vreodată lumina tiparului.', 'pixabay_carte_012.jpg', 'literatură universală', 'nouă', 123, 249, 'hardcover', 'Editura obscură', '{"John Doe"}', TRUE, NULL, 2003, current_timestamp),
 
-('Un fragment de neant în vidul existențial', 'Volum epic. Cuprinderea sa este egalată doar de inconsistența sa.', 'pixabay_carte_013.jpg', 'universală', 'bună', 76.43, 897, 'hardcover', 'Editura inexpugnabilă', '{"Jason Doe"}', TRUE, NULL, 2013, current_timestamp),
+('Un fragment de neant în vidul existențial', 'Volum epic. Cuprinderea sa este egalată doar de inconsistența sa.', 'pixabay_carte_013.jpg', 'literatură universală', 'bună', 76.43, 897, 'hardcover', 'Editura inexpugnabilă', '{"Jason Doe"}', TRUE, NULL, 2013, current_timestamp),
 
 ('Nimeni nu vrea să știe de nimeni', 'Roman postum, pus cap la cap de anturajul autorului pe baza notițelor descoperite absolut întâmplător, cu ocazia unei explozii la racordul de gaze.', 'pixabay_carte_generica.jpg', 'polițistă', 'nouă', 2.50, 167, 'paperback', 'Editura impermeabilă', '{"Jerome Doe"}', FALSE, NULL, 2024, current_timestamp),
 
-('Dacă citești asta, ceva nu e în regulă', 'Operă inestimabilă cu baterii incluse. Impactul său asupra lumii contemporane face obiectul unor studii interdisciplinare.', 'pixabay_carte_generica.jpg', 'universală', 'nouă', 0.99, 1234, 'hardcover', 'Editura impenetrabilă', '{"Jennifer Doe"}', TRUE, NULL, 2023, current_timestamp);
+('Dacă citești asta, ceva nu e în regulă', 'Operă inestimabilă cu baterii incluse. Impactul său asupra lumii contemporane face obiectul unor studii interdisciplinare.', 'pixabay_carte_generica.jpg', 'literatură universală', 'nouă', 0.99, 1234, 'hardcover', 'Editura impenetrabilă', '{"Jennifer Doe"}', TRUE, NULL, 2023, current_timestamp);
