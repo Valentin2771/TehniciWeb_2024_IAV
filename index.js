@@ -6,6 +6,7 @@ const sharp=require('sharp');
 const sass=require('sass');
 const ejs=require('ejs');
 
+// pentru conectarea la serverul postgres
 const {Client} = require('pg');
  
 app= express();

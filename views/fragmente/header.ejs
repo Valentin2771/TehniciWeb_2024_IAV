@@ -35,7 +35,7 @@
                     <div><!--<a href="/produse">-->Produse<!--</a>--></div>
                     <ul>
                         <li><a href="/produse">Toate</a></li>
-                        <% for(let categ of locals.optiuni) { %>
+                        <% if(locals.optiuni) for(let categ of locals.optiuni) { %>
                        
                                 <li><a href="/produse?tip=<%-categ.unnest; %>"><%- categ.unnest%></a></li>
                         <%}%>                        

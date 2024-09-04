@@ -35,6 +35,43 @@
 		{
 			"fisier":"literatura_clasica.jpg",
 			"descriere":"Literatură clasică"
+		},
+
+		{
+			"fisier":"carte_deschisa2.jpg",
+			"descriere":"O carte deschisă",
+			"luni":["martie","februarie","aprilie","noiembrie"]
+		},
+		{
+			"fisier":"carte_ochelari_telefon2.jpg",
+			"descriere":"Compoziție cu carte, ochelari și telefon mobil",
+			"luni":["ianuarie","februarie","iunie","septembrie"]
+			
+		},
+		{
+			"fisier":"carte_suprarealism2.jpg",
+			"descriere":"Compoziție suprarealistă",
+			"luni":["ianuarie","noiembrie","iunie","martie","aprilie"]
+		},
+		{
+			"fisier":"carti_vechi2.jpg",
+			"descriere":"Cărți vechi",
+			"luni":["noiembrie","aprilie", "septembrie"]
+		},
+		{
+			"fisier":"compozitie_lectura_nocturna2.jpg",
+			"descriere":"Compoziție cu grad ridicat de improbabilitate, în care un cititor nocturn levitează deasupra apei, având pe fundal clădirile orașului",
+			"luni":["noiembrie","aprilie", "septembrie"]
+		},
+		{
+			"fisier":"exoplaneta2.jpg",
+			"descriere":"Exoplanetă",
+			"luni":["noiembrie","septembrie"]
+		},
+		{
+			"fisier":"literatura_clasica2.jpg",
+			"descriere":"Literatură clasică",
+			"luni":["noiembrie","septembrie"]
 		}
 	]
 }
