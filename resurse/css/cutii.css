@@ -1,0 +1,75 @@
+body{
+    --padding-comun:.3rem;
+    --multicolor: white;
+    --galben: yellow;
+    --rosu: red;
+    --verde: green;
+    --c1: navy;
+    --c2: magenta;
+    --c0: black;
+    counter-reset: c1 0;
+    text-align: center;
+}
+
+#grid-cutii{
+    width:80%;
+    margin: 0 auto;
+    display:grid;
+    grid-template-columns: repeat(3, auto);
+    grid-column-gap:5px;
+    grid-row-gap: 2px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+#grid-cutii > section:nth-of-type(9n + 1),  #grid-cutii > section:nth-of-type(9n + 5), #grid-cutii > section:nth-of-type(9n + 9){
+    border: 5px var(--c0) solid;
+}
+
+#grid-cutii > section[class="verde"]{
+    background-color: var(--verde);
+}
+
+#grid-cutii > section[class="rosu"]{
+    background-color: var(--rosu);
+}
+
+#grid-cutii > section[class="galben"]{
+    background-color: var(--galben);
+}
+
+#grid-cutii > section[class="multicolor"]{
+    background-color: var(--multicolor);
+}
+
+#grid-cutii > section > ul > li:hover+li, #grid-cutii > section > ul > li:hover:has(li){
+    background-color: blue;
+    transition: all linear 1.5s;
+}
+
+#grid-cutii > section > ul > li:hover{
+    background-color: gray;
+    transition: all linear 1.5s;
+}
+
+
+#grid-cutii > section:nth-of-type(9n + 2), #grid-cutii > section:nth-of-type(9n + 4), #grid-cutii > section:nth-of-type(9n + 6),
+#grid-cutii > section:nth-of-type(9n + 8){
+    /* border: 5px var(--c1) solid; */
+}
+
+#grid-cutii > section:nth-of-type(9n + 3), #grid-cutii > section:nth-of-type(9n + 7){
+    border: 5px var(--c2) solid;
+}
+
+@media screen and (max-width:850px){
+    #grid-cutii{
+        display: block;
+    }
+
+    #grid-cutii > section{
+        border: none !important;
+    }
+}

@@ -30,15 +30,7 @@ var client = new Client({
 
 client.connect();
 
-client.query("select * from produse", function(err, rez){
-    if(err){
-        console.log(err);
-    } else {
-        obGlobal.optiuniMeniu = rez.rows;
-        // console.log(rez.rows);
-    }
-});
- 
+
 
 obGlobal = {
     obErori: null,
@@ -48,6 +40,15 @@ obGlobal = {
     folderBackup: path.join(__dirname, "backup")
 }
 
+client.query("select * from cutii_ambalaj", function(err, rez){
+    if(err){
+        console.log(err);
+    } else {
+        obGlobal.optiuniMeniu = rez.rows;
+        console.log(rez.rows);
+    }
+});
+ 
 
 let vect_foldere = ["temp", "backup"];
 
@@ -74,6 +75,26 @@ app.get(["/", "/index", "/home"], function(req, res){
 // app.get(exp_reg_elevi, function(req, res){
 //    res.render("/pagini/elevi", {test:req.query})
 // });
+
+app.get(["/cutii", "/cutii/:culoare"], function(req, res){
+    let conditieWhere = '';
+    if(req.params.culoare){
+        conditieWhere = " where culoare = \'" + req.params.culoare + "\'";
+    }
+
+    //console.log(conditieWhere);
+
+    client.query("select * from cutii_ambalaj" + conditieWhere, function(err, rec){
+        if(err){
+            console.log(err)
+        } else {
+            
+            console.log(rec.rows)
+            res.render("pagini/cutii", {cutiiExtrase: rec.rows})
+            console.log(req.rows)
+        }
+    })
+})
 
 app.get("/elevi", function(req, res){
     // console.log("Afisez query:", req.query.id);

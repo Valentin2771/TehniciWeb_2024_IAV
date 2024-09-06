@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    
+    <link href="/resurse/css/cutii.css" type="text/css" rel="stylesheet">
+    <title>Cutii</title>
+</head>
+<body>
+    <main>
+      <h1>Pagina cutii</h1>
+      <% let nrCutii = locals.cutiiExtrase.length; %>
+      <p>Numar cutii extrase de query: <%- nrCutii; %></p>
+
+      <select id="selector" name="filtru">
+        <option value="fmic">foarte mic (0,5)</option>
+        <option value="mic">mic (5-10)</option>
+        <option value="mediu">mediu (10-15)</option>
+        <option value="mare">mare(15+)</option>
+
+      </select>
+      <button type="button" id="filtreaza">Filtreaza</button>
+
+      <div id="grid-cutii">
+        
+        
+
+        <% for(elem of locals.cutiiExtrase) { %>
+          <% let string_culoare_fundal = "background-color" + elem.culoare; %>
+          <section class="<%- elem.culoare; %>">
+
+            <% let dimensiune = '';
+            let volum = 1;
+            if(elem.dimensiuni.includes(',')){
+              let vectorDimensiuni = elem.dimensiuni.split(','); 
+              for(let iterator = 0; iterator < vectorDimensiuni.length; iterator++){
+                vectorDimensiuni[iterator] = parseInt(vectorDimensiuni[iterator].split('cm')[0]);
+              }
+              
+              for(elm of vectorDimensiuni){
+                volum *= elm;
+              } 
+              if(volum < 100){
+                elem.dimensiuni = 'mic';
+              } else if(volum < 3000){
+                elem.dimensiuni = 'mediu';
+              } else {
+                elem.dimensiuni = 'mare';
+              }
+            }
+            %>
+        
+            <h2>Cutie <span id="identificator"><%- elem.id; %></span> culoare <span class="culoare-cutie"><%- elem.culoare; %></span> <span class="volum"> dimensiune: <%- elem.dimensiuni; %></span></h2>
+            <ul>
+              <% for(material of elem.materiale){%>
+                <li><%- material;%></li>
+              <%}%>
+            </ul>
+            <input type="text" name="input-pret-unitar" class="input-pret-unitar" value="<%- elem.pret_unitar %>"> 
+          </section>
+
+          <% } %>
+    
+      </div>
+
+   
+  </main>
+    <%- include("../fragmente/footer.ejs"); %>
+    <script src="/resurse/js/cutii.js"></script>
+</body>
+</html>
