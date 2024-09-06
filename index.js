@@ -67,6 +67,43 @@ app.get(["/", "/index", "/home"], function(req, res){
 });
 
 
+// expresie regulata pentru id-uri concatenate de elevi
+
+// let exp_reg_elevi = /\/elevi\?id=([1-9]+\d*\+)+([1-9]+\d*)+$/gi;
+
+// app.get(exp_reg_elevi, function(req, res){
+//    res.render("/pagini/elevi", {test:req.query})
+// });
+
+app.get("/elevi", function(req, res){
+    // console.log("Afisez query:", req.query.id);
+    let arr_ids = req.query.id?.split(' ');
+
+
+
+    let conditieWhere = '';
+    if(arr_ids?.length){
+        conditieWhere = ' where id in (';
+        for(let iter = 0; iter < arr_ids.length; iter++){
+            if(iter != arr_ids.length - 1){
+                conditieWhere += arr_ids[iter] +',';
+            } else{
+                conditieWhere += arr_ids[iter] +')';
+            }
+        } 
+    }
+    // console.log(conditieWhere);
+    client.query("select * from elevi" + conditieWhere, function(err, rec){
+        if(err){
+            console.log(err)
+        } else {
+            
+            console.log(rec.rows)
+            res.render("pagini/elevi", {catalog: rec.rows})
+        }
+    })
+})
+
 app.get("/produse", function(req, res){
     client.query("select * from unnest(enum_range(null::categorie_principala))", function(err, rezCategorie){
         if(err){

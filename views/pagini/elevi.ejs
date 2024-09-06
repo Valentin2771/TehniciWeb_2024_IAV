@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    
+    <link href="/resurse/css/elevi.css" type="text/css" rel="stylesheet">
+    <title>Elevi</title>
+</head>
+<body>
+    <main>
+      <h1>Pagina elevilor</h1>
+
+      <div id="panou-comenzi">
+        <select id="sortare" name="sortez">
+          <option value="ascendent">ascendent</option>
+          <option value="descendent">descendent</option>
+  
+        </select>
+  
+        <button id="btn-sortare">Sorteaza</button><br><br>
+
+        <input type="text" id="criteriu-filtrare" name="filtrare">
+        <button id="btn-filtrare">Filtreaza</button><br><br>
+
+        <label for="puncte">Puncte (between 0 and 50):</label>
+        <input type="range" id="puncte" name="puncte" min="0" max="50"> <span id="info-range"></span>
+
+      </div>
+    
+
+      <div id="grid-elevi">
+  
+      <% for(elem of locals.catalog) { %>
+        <article class="elev">
+          <h2><span class="prenume"><%- elem.prenume + " "; %></span><span class="nume"><%- elem.nume; %></span></h2>
+          <p>Clasa: <%- elem.clasa %></p>
+          
+          <ul>
+            <% let note = elem.note.split(","); 
+            let totalNote = 0; 
+            let nota = null;
+            for(nota of note){ %>
+              <li class="nota"><%- nota; %></li>
+            <%
+              totalNote += parseFloat(nota);
+            } 
+            let medieNote = (totalNote/note.length).toFixed(2);
+            elem.medie = medieNote;
+            %>
+          </ul>
+           <p class="medie-note"><%- medieNote; %></p>
+        </article>
+        <% } %>
+      </div>
+     <%- console.log("Catalog cu obiecte la care am atasat media: ", locals.catalog); %>
+  </main>
+    <%- include("../fragmente/footer.ejs"); %>
+    <script src="/resurse/js/elevi.js"></script>
+</body>
+</html>

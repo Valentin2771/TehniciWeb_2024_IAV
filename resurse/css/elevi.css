@@ -1,0 +1,97 @@
+h1, h2, p, li, footer{
+    text-align: center;
+}
+
+html{
+    --dim-font:18px;
+}
+
+body{
+    --padding-comun:.3rem;
+    --albastru-deschis: #e3f4ff;
+    --roz-palid: #ffe3fe;
+    --alb-dubios: #fefefb;
+    counter-reset: c1 0;
+}
+
+p{
+    padding: var(--padding-comun);
+    margin: .2rem;
+}
+
+li {
+    list-style-type: none;
+    text-align: center;
+    display: inline-block;
+    margin-left: .3em;
+    border:2px orangered solid;
+    padding: var(--padding-comun);
+
+}
+
+#panou-comenzi{
+    width:80%;
+    margin:0 auto;
+    padding: var(--padding-comun);
+    margin-bottom: .5em;
+
+}
+
+#grid-elevi{
+    width:80%;
+    margin: 0 auto;
+    display:grid;
+    grid-template-columns: repeat(3, auto);
+    grid-column-gap:10px;
+    grid-row-gap: 5px;
+}
+
+
+
+#grid-elevi > article{
+    border: 3px solid navy;
+    padding: var(--padding-comun);
+    counter-increment: c1 1;
+    
+}
+
+article::after{
+    content:"Elevul nr. " counter(c1);
+}
+
+#grid-elevi > article:nth-of-type(9n + 1), #grid-elevi > article:nth-of-type(9n + 9){
+    background-color: var(--roz-palid);
+}
+
+
+
+#grid-elevi > article:nth-of-type(9n + 2), #grid-elevi > article:nth-of-type(9n + 4), #grid-elevi > article:nth-of-type(9n + 6),
+#grid-elevi > article:nth-of-type(9n + 8){
+    background-color: var(--albastru-deschis);
+}
+
+#grid-elevi > article:nth-of-type(9n + 3), #grid-elevi > article:nth-of-type(9n + 5), #grid-elevi > article:nth-of-type(9n + 7){
+    background-color: var(--alb-dubios);
+}
+
+#tooltip-pagina{
+    display: none;
+}
+
+article:hover p:nth-of-type(2){
+    background-color: rgba(135, 229, 241, 1);
+    font-size: calc(var(--dim-font) + 5px);
+    transition: all linear 2s;
+}
+
+@media screen and (max-width:900px) {
+    #grid-elevi{
+        grid-template-columns: repeat(2, auto);
+        grid-column-gap:7px;
+        grid-row-gap: 3px;
+    }
+    #grid-elevi > article{
+        background-color: var(--alb-dubios) !important;
+    }
+    
+}
